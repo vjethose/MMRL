@@ -1,0 +1,20 @@
+{
+ "dataset": "arch_ogb",
+ "method": "early",
+ "unimodal": null,
+ "ablate": "",
+ "modalities": [
+  "text",
+  "graph"
+ ],
+ "device": "cpu",
+ "batch_size": 1,
+ "latency_ms_per_batch": 266.7945690000124,
+ "latency_ms_per_batch_std": 0.0,
+ "latency_ms_per_sample": 266.7945690000124,
+ "peak_mem_MB": NaN,
+ "activation_mem_MB": NaN,
+ "params_M": 111.416116,
+ "gflops_per_sample": 43.521482752,
+ "amp": "none"
+}

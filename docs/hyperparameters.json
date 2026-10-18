@@ -1,0 +1,78 @@
+{
+ "encoders": {
+  "text": "SciBERT allenai/scibert_scivocab_uncased (12 layers, 768)",
+  "image": "ViT-B/16 google/vit-base-patch16-224-in21k (197 tokens)",
+  "graph": "3-layer R-GCN, width 256, basis decomposition (<=8 bases), mean aggregation",
+  "audio": "4-block 1D conv (k 64/32/16/8, s 8/4/2/2) + 6-layer Transformer, width 512 (implemented, not evaluated)"
+ },
+ "mmrl": {
+  "D": 512,
+  "heads": 8,
+  "entity_units_per_modality": 16,
+  "elf_layers": 1,
+  "dlf_scorer": "2-layer MLP (D -> D/4 -> 1)",
+  "null_key_token": true,
+  "skga": {
+   "lambda": 0.1,
+   "tau": 0.07,
+   "entity_embeddings": "frozen SciBERT mean-pooled embeddings of entity names"
+  }
+ },
+ "baselines": {
+  "unimodal": "one encoder + mean pool + projection to 512; best modality by validation score",
+  "early_fusion": "concat mean-pooled encoder features -> MLP (hidden 1024) -> 512",
+  "late_fusion": "per-modality projection + classifier; logits averaged over present modalities",
+  "cross_modal_attention": "MulT-style; 2 pre-norm cross-attention layers per ordered modality pair, width 768; merge + 1 self-attention layer",
+  "mm_bert": "MAG gate after BERT layer 1, beta 0.5"
+ },
+ "optimisation": {
+  "optimizer": "AdamW",
+  "weight_decay": 0.01,
+  "lr_encoders": 2e-05,
+  "lr_fusion_and_heads": 0.0001,
+  "warmup_fraction": 0.1,
+  "schedule": "linear warmup + cosine decay",
+  "grad_clip": 1.0,
+  "batch_per_step": 16,
+  "grad_accumulation": 2,
+  "effective_batch": 32,
+  "max_epochs": 10,
+  "early_stopping_patience": 3,
+  "selection": "checkpoint with best validation score",
+  "precision": "fp16 autocast + GradScaler (T4/P100)",
+  "seeds": [
+   0,
+   1,
+   2
+  ]
+ },
+ "retrieval": {
+  "loss": "symmetric InfoNCE, in-batch negatives",
+  "tau": 0.05,
+  "direction": "caption -> image",
+  "ranking_pool": "per-split image pool"
+ },
+ "inputs": {
+  "max_text_tokens": {
+   "scienceqa": 256,
+   "ogbn_arxiv": 256,
+   "rocov2": 128
+  },
+  "image_size": 224,
+  "graph": "ego graph: paper + up to 31 citation neighbours, induced edges, relations {cites, cited-by}"
+ },
+ "cost_measurement": {
+  "batch": 32,
+  "warmup_passes": 10,
+  "timed_passes": 100,
+  "mode": "eval, no grad",
+  "data_loading": "excluded",
+  "memory": "torch.cuda.max_memory_allocated",
+  "flops": "torch.utils.flop_counter, multiply-add = 2 FLOPs, one sample"
+ },
+ "statistics": [
+  "paired t-test over seeds, Bonferroni-corrected",
+  "Cohen's d (paired)",
+  "McNemar exact test per seed"
+ ]
+}

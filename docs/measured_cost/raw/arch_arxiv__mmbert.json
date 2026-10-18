@@ -1,0 +1,22 @@
+{
+ "dataset": "arch_arxiv",
+ "method": "mmbert",
+ "unimodal": null,
+ "ablate": "",
+ "modalities": [
+  "text",
+  "image",
+  "audio",
+  "graph"
+ ],
+ "device": "cpu",
+ "batch_size": 1,
+ "latency_ms_per_batch": 1443.6330700000326,
+ "latency_ms_per_batch_std": 0.0,
+ "latency_ms_per_sample": 1443.6330700000326,
+ "peak_mem_MB": NaN,
+ "activation_mem_MB": NaN,
+ "params_M": 236.212796,
+ "gflops_per_sample": 151.847972864,
+ "amp": false
+}

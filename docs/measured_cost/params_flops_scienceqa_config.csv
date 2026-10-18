@@ -1,0 +1,8 @@
+method,params_M,gflops_per_sample
+cma,240.8,91.1
+early,197.2,77.2
+late,195.9,77.2
+mmbert,197.3,78.1
+mmrl,206.9,80.0
+unimodal_image,86.2,33.7
+unimodal_text,109.7,43.5

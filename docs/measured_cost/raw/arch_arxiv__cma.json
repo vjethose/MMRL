@@ -1,0 +1,22 @@
+{
+ "dataset": "arch_arxiv",
+ "method": "cma",
+ "unimodal": null,
+ "ablate": "",
+ "modalities": [
+  "text",
+  "image",
+  "audio",
+  "graph"
+ ],
+ "device": "cpu",
+ "batch_size": 1,
+ "latency_ms_per_batch": 2600.148893000096,
+ "latency_ms_per_batch_std": 0.0,
+ "latency_ms_per_sample": 2600.148893000096,
+ "peak_mem_MB": NaN,
+ "activation_mem_MB": NaN,
+ "params_M": 440.609084,
+ "gflops_per_sample": 249.396211712,
+ "amp": false
+}

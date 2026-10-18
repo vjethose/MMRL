@@ -1,0 +1,6 @@
+__pycache__/
+data/
+runs/
+results/
+paper_out/
+*.pt

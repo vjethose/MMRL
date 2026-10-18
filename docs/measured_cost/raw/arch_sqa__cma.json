@@ -1,0 +1,20 @@
+{
+ "dataset": "arch_sqa",
+ "method": "cma",
+ "unimodal": null,
+ "ablate": "",
+ "modalities": [
+  "text",
+  "image"
+ ],
+ "device": "cpu",
+ "batch_size": 1,
+ "latency_ms_per_batch": 464.1194220000102,
+ "latency_ms_per_batch_std": 0.0,
+ "latency_ms_per_sample": 464.1194220000102,
+ "peak_mem_MB": NaN,
+ "activation_mem_MB": NaN,
+ "params_M": 240.813573,
+ "gflops_per_sample": 91.086918656,
+ "amp": "none"
+}
