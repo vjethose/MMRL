@@ -140,6 +140,8 @@ class MMDataset(torch.utils.data.Dataset):
     def __getitem__(self, i):
         r = self.records[i]
         out = {"id": r["id"], "label": r.get("label", -1), "entity": r.get("entity", -1), "n_choices": r.get("n_choices", -1)}
+        if self.meta.get("multiple_choice"):
+            out["options"] = list(r.get("options") or [])
         for m in self.modalities:
             v = r.get(m)
             if v is None or m in self.drop:
@@ -169,6 +171,14 @@ class Collator:
             "entity": torch.tensor([it["entity"] for it in items], dtype=torch.long),
             "present": {},
         }
+        if self.meta.get("multiple_choice"):
+            K = len(self.meta.get("answers", [])) or 5
+            flat = []
+            for it in items:
+                opts = (it.get("options") or [])[:K]
+                flat += opts + [""] * (K - len(opts))
+            tok = self.tok(flat, self.meta.get("max_option_len", 32))
+            batch["options"] = {k: v.reshape(B, K, -1) for k, v in tok.items()}
         if any(it.get("n_choices", -1) > 0 for it in items):
             batch["n_choices"] = torch.tensor([it.get("n_choices", -1) for it in items], dtype=torch.long)
         for m in self.modalities:

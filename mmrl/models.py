@@ -10,7 +10,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from .encoders import build_encoders, encode_all, masked_mean
+from .encoders import PRESETS, TextEncoder, build_encoders, encode_all, masked_mean
 
 
 class CrossBlock(nn.Module):
@@ -328,6 +328,17 @@ class TaskModel(nn.Module):
             self.core = MMBERT(meta, modalities, preset, D=D)
         else:
             raise ValueError(method)
+        # multiple choice (ScienceQA): score each answer option against the document embedding
+        self.mc = bool(meta.get("multiple_choice"))
+        if self.mc:
+            if method == "late":
+                self.core.heads = None
+            enc = getattr(self.core, "encoders", {})
+            self.opt_text = enc["text"] if "text" in enc else TextEncoder(PRESETS[preset])
+            self.opt_proj = nn.Linear(self.opt_text.dim, D)
+            self.mc_norm = nn.LayerNorm(D)
+            self.mc_scale = nn.Parameter(torch.tensor(D ** -0.5))
+            n_out = None
         self.head = nn.Linear(D, n_out) if (n_out and method != "late") else None
         # SKGA (Eq. 4): contrast the document embedding against all KG entities
         if entity_emb is not None:
@@ -342,7 +353,13 @@ class TaskModel(nn.Module):
 
     def forward(self, batch):
         out = self.core(batch)
-        if self.head is not None:
+        if self.mc:
+            o = batch["options"]
+            B, K, L = o["input_ids"].shape
+            h, mk = self.opt_text({"input_ids": o["input_ids"].reshape(B * K, L), "attention_mask": o["attention_mask"].reshape(B * K, L)})
+            oe = self.opt_proj(masked_mean(h, mk)).reshape(B, K, -1)
+            out["logits"] = torch.einsum("bd,bkd->bk", self.mc_norm(out["emb"]), oe) * self.mc_scale
+        elif self.head is not None:
             out["logits"] = self.head(out["emb"])
         return out
 

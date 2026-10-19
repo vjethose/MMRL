@@ -16,7 +16,9 @@ def classification_metrics(probs, labels, num_classes):
         if num_classes == 2:
             out["auc"] = roc_auc_score(labels, probs[:, 1])
         else:
-            out["auc"] = roc_auc_score(y, probs, average="macro", multi_class="ovr")
+            # macro one-vs-rest AUC over the classes present in the test set (a sampled test set can miss rare classes)
+            out["auc"] = roc_auc_score(y[:, present], probs[:, present], average="macro")
+            out["auc_classes"] = int(present.sum())
             # micro-averaged ROC curve, for the ROC figure
             fpr, tpr, _ = roc_curve(y.ravel(), probs.ravel())
             idx = np.linspace(0, len(fpr) - 1, min(len(fpr), 200)).astype(int)

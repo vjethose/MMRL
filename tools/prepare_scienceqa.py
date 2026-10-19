@@ -69,6 +69,7 @@ def main():
                    "subject": str(r.get("subject", "")), "grade": str(r.get("grade", ""))}
             opts = " ".join(f"({LETTERS[k]}) {c}" for k, c in enumerate(choices))
             hint = str(r.get("hint") or "").strip()
+            rec["options"] = [str(c) for c in choices]
             rec["text"] = f"Question: {r['question']} " + (f"Context: {hint} " if hint else "") + f"Options: {opts}"
             if img is not None:
                 path = f"images/{sid}.png"
@@ -82,7 +83,7 @@ def main():
                 f.write(json.dumps(rec) + "\n")
         stats[split] = len(rows)
     json.dump(skills, open(os.path.join(a.out, "kg/entities.json"), "w"), indent=0)
-    meta = {"name": "scienceqa", "task": "vqa", "modalities": ["text", "image"], "answers": LETTERS,
+    meta = {"name": "scienceqa", "task": "vqa", "multiple_choice": True, "max_option_len": 32, "modalities": ["text", "image"], "answers": LETTERS,
             "max_text_len": a.max_text_len, "entity_emb": "kg/entity_emb.npy", "entity_names": "kg/entities.json",
             "source": "ScienceQA (Lu et al., NeurIPS 2022), official splits, IMG subset" + (" + text-only" if a.all else ""),
             "sizes": stats}

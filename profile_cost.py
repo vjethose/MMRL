@@ -25,6 +25,9 @@ def fake_items(meta, mods, n, seed=0):
     items = []
     for i in range(n):
         it = {"id": f"x{i}", "label": 0, "entity": 0}
+        if meta.get("multiple_choice"):
+            it["options"] = [" ".join(f"opt{j}" for j in range(12))] * len(meta.get("answers", [0] * 5))
+            it["n_choices"] = len(meta.get("answers", [0] * 5))
         for m in mods:
             if m == "text":
                 it[m] = " ".join(f"tok{j}" for j in range(meta["max_text_len"] + 8))
