@@ -240,7 +240,8 @@ def main():
         for i, m in enumerate(ms_):
             vals = [table4[d].get(m, (np.nan, 0, 0)) for d in datasets]
             ax.bar(np.arange(len(datasets)) + i * w, [v[0] for v in vals], w, yerr=[v[1] for v in vals], label=NAMES[m], color=col[m], capsize=2)
-        ax.set_xticks(np.arange(len(datasets)) + w * (len(ms_) - 1) / 2, datasets)
+        DSN = {"scienceqa": "ScienceQA (Acc)", "ogbn_arxiv": "ogbn-arxiv (Acc)", "rocov2": "ROCOv2 (mAP@10)"}
+        ax.set_xticks(np.arange(len(datasets)) + w * (len(ms_) - 1) / 2, [DSN.get(d, d) for d in datasets])
         ax.set_ylabel("Score (%)")
         ax.legend(ncol=3, fontsize=7, frameon=False)
         fig.tight_layout(); fig.savefig(os.path.join(a.out, "fig2_accuracy.png"), dpi=300); plt.close(fig)
@@ -270,12 +271,21 @@ def main():
         if "confusion" in S:
             cm = np.array(runs[conf_ds]["mmrl"][0]["test"]["confusion"])
             names = json.load(open(os.path.join(runs[conf_ds]["mmrl"][0]["args"]["data"], "meta.json"))).get("label_names") or list(range(len(cm)))
-            fig, ax = plt.subplots(figsize=(3.6, 3.4))
-            ax.imshow(cm, cmap="Blues")
-            for i in range(len(cm)):
-                for j in range(len(cm)):
-                    ax.text(j, i, cm[i, j], ha="center", va="center", fontsize=6, color="white" if cm[i, j] > cm.max() / 2 else "black")
-            ax.set_xticks(range(len(cm)), names, rotation=45, ha="right", fontsize=6); ax.set_yticks(range(len(cm)), names, fontsize=6)
+            names = [n.replace("cs ", "cs.").upper().replace("CS.", "cs.") if isinstance(n, str) else n for n in names]
+            if len(cm) <= 12:
+                fig, ax = plt.subplots(figsize=(3.6, 3.4))
+                ax.imshow(cm, cmap="Blues")
+                for i in range(len(cm)):
+                    for j in range(len(cm)):
+                        ax.text(j, i, cm[i, j], ha="center", va="center", fontsize=6, color="white" if cm[i, j] > cm.max() / 2 else "black")
+                ax.set_xticks(range(len(cm)), names, rotation=45, ha="right", fontsize=6); ax.set_yticks(range(len(cm)), names, fontsize=6)
+            else:
+                # many classes: row-normalised (recall) heatmap, no per-cell numbers
+                rn = cm / np.maximum(cm.sum(1, keepdims=True), 1)
+                fig, ax = plt.subplots(figsize=(7, 6.4))
+                im = ax.imshow(rn, cmap="Blues", vmin=0, vmax=1)
+                ax.set_xticks(range(len(cm)), names, rotation=90, fontsize=5); ax.set_yticks(range(len(cm)), names, fontsize=5)
+                cb = fig.colorbar(im, ax=ax, fraction=0.04, pad=0.02); cb.set_label("Fraction of true class", fontsize=7); cb.ax.tick_params(labelsize=6)
             ax.set_xlabel("Predicted"); ax.set_ylabel("True")
             fig.tight_layout(); fig.savefig(os.path.join(a.out, "fig5_confusion.png"), dpi=300); plt.close(fig)
         # Fig 6: ablation
