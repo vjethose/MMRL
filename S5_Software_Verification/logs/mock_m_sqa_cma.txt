@@ -1,0 +1,6 @@
+m_sqa__cma__s0: 6.3M parameters on cpu
+epoch 1: loss 1.0343  val 68.75  (4s)
+{
+ "accuracy": 56.25,
+ "em": 56.25
+}

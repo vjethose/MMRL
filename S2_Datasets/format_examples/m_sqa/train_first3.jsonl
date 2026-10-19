@@ -1,0 +1,3 @@
+{"id": "train_1", "label": 0, "n_choices": 3, "entity": 0, "subject": "natural science", "grade": "grade4", "text": "Question: Which colour is shown 1? Options: (A) opt0 (B) opt1 (C) opt2", "image": "images/train_1.png"}
+{"id": "train_2", "label": 0, "n_choices": 2, "entity": 0, "subject": "natural science", "grade": "grade4", "text": "Question: Which colour is shown 2? Context: A figure. Options: (A) opt0 (B) opt1", "image": "images/train_2.png"}
+{"id": "train_3", "label": 0, "n_choices": 2, "entity": 0, "subject": "natural science", "grade": "grade4", "text": "Question: Which colour is shown 3? Options: (A) opt0 (B) opt1", "image": "images/train_3.png"}

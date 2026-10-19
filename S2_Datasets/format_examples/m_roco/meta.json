@@ -1,0 +1,17 @@
+{
+ "name": "rocov2",
+ "task": "retrieval",
+ "modalities": [
+  "text",
+  "image"
+ ],
+ "max_text_len": 128,
+ "entity_emb": "kg/entity_emb.npy",
+ "entity_names": "kg/entities.json",
+ "source": "ROCOv2 (Ruckert et al., Sci. Data 2024), official splits, seed-0 subsample",
+ "sizes": {
+  "train": 40,
+  "val": 12,
+  "test": 12
+ }
+}

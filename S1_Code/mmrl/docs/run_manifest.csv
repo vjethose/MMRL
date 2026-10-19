@@ -1,0 +1,86 @@
+paper_item,dataset,method,variant,seed,command
+Table IV,scienceqa,mmrl,,0,python train.py --data data/scienceqa --method mmrl --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,cma,,0,python train.py --data data/scienceqa --method cma --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,mmbert,,0,python train.py --data data/scienceqa --method mmbert --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,late,,0,python train.py --data data/scienceqa --method late --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,early,,0,python train.py --data data/scienceqa --method early --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV (UniModal),scienceqa,unimodal,text,0,python train.py --data data/scienceqa --method unimodal --unimodal text --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV (UniModal),scienceqa,unimodal,image,0,python train.py --data data/scienceqa --method unimodal --unimodal image --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,ogbn_arxiv,mmrl,,0,python train.py --data data/ogbn_arxiv --method mmrl --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,cma,,0,python train.py --data data/ogbn_arxiv --method cma --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,mmbert,,0,python train.py --data data/ogbn_arxiv --method mmbert --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,late,,0,python train.py --data data/ogbn_arxiv --method late --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,early,,0,python train.py --data data/ogbn_arxiv --method early --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV (UniModal),ogbn_arxiv,unimodal,text,0,python train.py --data data/ogbn_arxiv --method unimodal --unimodal text --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV (UniModal),ogbn_arxiv,unimodal,graph,0,python train.py --data data/ogbn_arxiv --method unimodal --unimodal graph --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,mmrl,,0,python train.py --data data/rocov2 --method mmrl --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,cma,,0,python train.py --data data/rocov2 --method cma --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,mmbert,,0,python train.py --data data/rocov2 --method mmbert --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,late,,0,python train.py --data data/rocov2 --method late --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,early,,0,python train.py --data data/rocov2 --method early --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o fusion,0,python train.py --data data/scienceqa --method mmrl --ablate fusion --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o attention,0,python train.py --data data/scienceqa --method mmrl --ablate attention --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o MAFE,0,python train.py --data data/scienceqa --method mmrl --ablate mafe --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o SKGA,0,python train.py --data data/scienceqa --method mmrl --lambda_align 0 --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o image (text only),0,python train.py --data data/scienceqa --method mmrl --modalities text --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o text (image only),0,python train.py --data data/scienceqa --method mmrl --modalities image --seed 0 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,scienceqa,mmrl,,1,python train.py --data data/scienceqa --method mmrl --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,cma,,1,python train.py --data data/scienceqa --method cma --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,mmbert,,1,python train.py --data data/scienceqa --method mmbert --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,late,,1,python train.py --data data/scienceqa --method late --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,early,,1,python train.py --data data/scienceqa --method early --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV (UniModal),scienceqa,unimodal,text,1,python train.py --data data/scienceqa --method unimodal --unimodal text --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV (UniModal),scienceqa,unimodal,image,1,python train.py --data data/scienceqa --method unimodal --unimodal image --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,ogbn_arxiv,mmrl,,1,python train.py --data data/ogbn_arxiv --method mmrl --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,cma,,1,python train.py --data data/ogbn_arxiv --method cma --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,mmbert,,1,python train.py --data data/ogbn_arxiv --method mmbert --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,late,,1,python train.py --data data/ogbn_arxiv --method late --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,early,,1,python train.py --data data/ogbn_arxiv --method early --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV (UniModal),ogbn_arxiv,unimodal,text,1,python train.py --data data/ogbn_arxiv --method unimodal --unimodal text --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV (UniModal),ogbn_arxiv,unimodal,graph,1,python train.py --data data/ogbn_arxiv --method unimodal --unimodal graph --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,mmrl,,1,python train.py --data data/rocov2 --method mmrl --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,cma,,1,python train.py --data data/rocov2 --method cma --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,mmbert,,1,python train.py --data data/rocov2 --method mmbert --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,late,,1,python train.py --data data/rocov2 --method late --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,early,,1,python train.py --data data/rocov2 --method early --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o fusion,1,python train.py --data data/scienceqa --method mmrl --ablate fusion --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o attention,1,python train.py --data data/scienceqa --method mmrl --ablate attention --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o MAFE,1,python train.py --data data/scienceqa --method mmrl --ablate mafe --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o SKGA,1,python train.py --data data/scienceqa --method mmrl --lambda_align 0 --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o image (text only),1,python train.py --data data/scienceqa --method mmrl --modalities text --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o text (image only),1,python train.py --data data/scienceqa --method mmrl --modalities image --seed 1 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,scienceqa,mmrl,,2,python train.py --data data/scienceqa --method mmrl --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,cma,,2,python train.py --data data/scienceqa --method cma --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,mmbert,,2,python train.py --data data/scienceqa --method mmbert --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,late,,2,python train.py --data data/scienceqa --method late --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,scienceqa,early,,2,python train.py --data data/scienceqa --method early --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV (UniModal),scienceqa,unimodal,text,2,python train.py --data data/scienceqa --method unimodal --unimodal text --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV (UniModal),scienceqa,unimodal,image,2,python train.py --data data/scienceqa --method unimodal --unimodal image --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,ogbn_arxiv,mmrl,,2,python train.py --data data/ogbn_arxiv --method mmrl --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,cma,,2,python train.py --data data/ogbn_arxiv --method cma --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,mmbert,,2,python train.py --data data/ogbn_arxiv --method mmbert --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,late,,2,python train.py --data data/ogbn_arxiv --method late --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV,ogbn_arxiv,early,,2,python train.py --data data/ogbn_arxiv --method early --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results --robustness
+Table IV (UniModal),ogbn_arxiv,unimodal,text,2,python train.py --data data/ogbn_arxiv --method unimodal --unimodal text --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV (UniModal),ogbn_arxiv,unimodal,graph,2,python train.py --data data/ogbn_arxiv --method unimodal --unimodal graph --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,mmrl,,2,python train.py --data data/rocov2 --method mmrl --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,cma,,2,python train.py --data data/rocov2 --method cma --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,mmbert,,2,python train.py --data data/rocov2 --method mmbert --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,late,,2,python train.py --data data/rocov2 --method late --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table IV,rocov2,early,,2,python train.py --data data/rocov2 --method early --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o fusion,2,python train.py --data data/scienceqa --method mmrl --ablate fusion --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o attention,2,python train.py --data data/scienceqa --method mmrl --ablate attention --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o MAFE,2,python train.py --data data/scienceqa --method mmrl --ablate mafe --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o SKGA,2,python train.py --data data/scienceqa --method mmrl --lambda_align 0 --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o image (text only),2,python train.py --data data/scienceqa --method mmrl --modalities text --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table V,scienceqa,mmrl,w/o text (image only),2,python train.py --data data/scienceqa --method mmrl --modalities image --seed 2 --preset paper --amp fp16 --workers 2 --epochs 10 --patience 3 --bs 16 --accum 2 --out results
+Table VI,scienceqa,mmrl,,-,python profile_cost.py --data data/scienceqa --method mmrl --amp fp16
+Table VI,scienceqa,cma,,-,python profile_cost.py --data data/scienceqa --method cma --amp fp16
+Table VI,scienceqa,mmbert,,-,python profile_cost.py --data data/scienceqa --method mmbert --amp fp16
+Table VI,scienceqa,late,,-,python profile_cost.py --data data/scienceqa --method late --amp fp16
+Table VI,scienceqa,early,,-,python profile_cost.py --data data/scienceqa --method early --amp fp16
+Table VI,ogbn_arxiv,mmrl,,-,python profile_cost.py --data data/ogbn_arxiv --method mmrl --amp fp16
+Table VI,ogbn_arxiv,cma,,-,python profile_cost.py --data data/ogbn_arxiv --method cma --amp fp16
+Table VI,ogbn_arxiv,mmbert,,-,python profile_cost.py --data data/ogbn_arxiv --method mmbert --amp fp16
+Table VI,ogbn_arxiv,late,,-,python profile_cost.py --data data/ogbn_arxiv --method late --amp fp16
+Table VI,ogbn_arxiv,early,,-,python profile_cost.py --data data/ogbn_arxiv --method early --amp fp16

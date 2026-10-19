@@ -1,0 +1,22 @@
+{
+ "dataset": "arch_arxiv",
+ "method": "early",
+ "unimodal": null,
+ "ablate": "",
+ "modalities": [
+  "text",
+  "image",
+  "audio",
+  "graph"
+ ],
+ "device": "cpu",
+ "batch_size": 1,
+ "latency_ms_per_batch": 1459.534819000055,
+ "latency_ms_per_batch_std": 0.0,
+ "latency_ms_per_sample": 1459.534819000055,
+ "peak_mem_MB": NaN,
+ "activation_mem_MB": NaN,
+ "params_M": 234.569276,
+ "gflops_per_sample": 147.625095168,
+ "amp": false
+}

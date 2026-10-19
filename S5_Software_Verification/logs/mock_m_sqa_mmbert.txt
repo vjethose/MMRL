@@ -1,0 +1,6 @@
+m_sqa__mmbert__s0: 5.0M parameters on cpu
+epoch 1: loss 1.1069  val 31.25  (1s)
+{
+ "accuracy": 50.0,
+ "em": 50.0
+}

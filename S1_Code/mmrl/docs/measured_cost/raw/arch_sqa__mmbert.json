@@ -1,0 +1,20 @@
+{
+ "dataset": "arch_sqa",
+ "method": "mmbert",
+ "unimodal": null,
+ "ablate": "",
+ "modalities": [
+  "text",
+  "image"
+ ],
+ "device": "cpu",
+ "batch_size": 1,
+ "latency_ms_per_batch": 485.28151200002867,
+ "latency_ms_per_batch_std": 0.0,
+ "latency_ms_per_sample": 485.28151200002867,
+ "peak_mem_MB": NaN,
+ "activation_mem_MB": NaN,
+ "params_M": 197.296389,
+ "gflops_per_sample": 78.08877056,
+ "amp": "none"
+}

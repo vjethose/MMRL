@@ -1,6 +1,6 @@
 __pycache__/
-data/
-runs/
-results/
-paper_out/
 *.pt
+S1_Code/mmrl/data/
+S1_Code/mmrl/runs/
+S1_Code/mmrl/results/
+S1_Code/mmrl/paper_out/

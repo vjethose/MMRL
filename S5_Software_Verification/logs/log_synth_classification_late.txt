@@ -1,0 +1,9 @@
+synth_classification__late__s0: 5.7M parameters on cpu
+epoch 1: loss 1.7840  val 15.00  (6s)
+{
+ "accuracy": 18.333333333333332,
+ "precision": 8.585858585858585,
+ "recall": 18.333333333333336,
+ "f1": 7.6923076923076925,
+ "auc": 0.7600000000000001
+}

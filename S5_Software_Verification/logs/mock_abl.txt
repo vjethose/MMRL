@@ -1,0 +1,6 @@
+m_sqa__mmrl__wo_mafe__wo_skga__s0: 15.6M parameters on cpu
+epoch 1: loss 1.4396  val 62.50  (5s)
+{
+ "accuracy": 75.0,
+ "em": 75.0
+}

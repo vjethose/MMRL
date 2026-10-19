@@ -1,0 +1,6 @@
+synth_vqa__unimodal__text__s0: 4.4M parameters on cpu
+epoch 1: loss 1.8098  val 13.33  (23s)
+{
+ "accuracy": 23.333333333333332,
+ "em": 23.333333333333332
+}

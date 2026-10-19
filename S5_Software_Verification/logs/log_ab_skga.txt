@@ -1,0 +1,10 @@
+synth_classification__mmrl__wo_skga__s0: 24.8M parameters on cpu
+epoch 1: loss 2.1595  val 16.67  (27s)
+{
+ "accuracy": 16.666666666666664,
+ "precision": 2.873563218390805,
+ "recall": 16.666666666666664,
+ "f1": 4.901960784313726,
+ "map": 61.62553739771539,
+ "auc": 0.8433333333333334
+}

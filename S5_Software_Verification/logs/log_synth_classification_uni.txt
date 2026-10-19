@@ -1,0 +1,10 @@
+synth_classification__unimodal__text__s0: 4.4M parameters on cpu
+epoch 1: loss 1.8129  val 21.67  (1s)
+{
+ "accuracy": 25.0,
+ "precision": 9.738372093023257,
+ "recall": 25.0,
+ "f1": 13.35268505079826,
+ "map": 27.092216386059416,
+ "auc": 0.568
+}

@@ -1,0 +1,3 @@
+{"id": "q_ROCOv2_2023_train_000000", "text": "CT scan showing concept 0 lesion", "entity": 0, "positives": ["img_ROCOv2_2023_train_000000"]}
+{"id": "q_ROCOv2_2023_train_000027", "text": "CT scan showing concept 3 lesion", "entity": 3, "positives": ["img_ROCOv2_2023_train_000027"]}
+{"id": "q_ROCOv2_2023_train_000012", "text": "CT scan showing concept 0 lesion", "entity": 0, "positives": ["img_ROCOv2_2023_train_000012"]}

@@ -1,0 +1,9 @@
+synth_classification__cma__s0: 11.6M parameters on cpu
+epoch 1: loss 2.0327  val 15.00  (27s)
+{
+ "accuracy": 16.666666666666664,
+ "precision": 2.873563218390805,
+ "recall": 16.666666666666664,
+ "f1": 4.901960784313726,
+ "auc": 0.7983333333333333
+}

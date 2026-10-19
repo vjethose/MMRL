@@ -1,0 +1,10 @@
+synth_classification__mmrl__mods_text_image_graph__s0: 19.9M parameters on cpu
+epoch 1: loss 2.3408  val 16.67  (16s)
+{
+ "accuracy": 16.666666666666664,
+ "precision": 2.923976608187134,
+ "recall": 16.666666666666664,
+ "f1": 4.975124378109452,
+ "map": 57.893742466110886,
+ "auc": 0.8513333333333334
+}

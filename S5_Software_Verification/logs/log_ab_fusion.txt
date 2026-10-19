@@ -1,0 +1,10 @@
+synth_classification__mmrl__wo_fusion__s0: 5.7M parameters on cpu
+epoch 1: loss 2.1129  val 26.67  (7s)
+{
+ "accuracy": 30.0,
+ "precision": 17.992424242424242,
+ "recall": 30.0,
+ "f1": 20.158730158730158,
+ "map": 34.26194249671137,
+ "auc": 0.723
+}

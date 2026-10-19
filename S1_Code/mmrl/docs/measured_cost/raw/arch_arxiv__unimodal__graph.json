@@ -1,0 +1,19 @@
+{
+ "dataset": "arch_arxiv",
+ "method": "unimodal",
+ "unimodal": "graph",
+ "ablate": "",
+ "modalities": [
+  "graph"
+ ],
+ "device": "cpu",
+ "batch_size": 1,
+ "latency_ms_per_batch": 4.119682000009561,
+ "latency_ms_per_batch_std": 0.0,
+ "latency_ms_per_sample": 4.119682000009561,
+ "peak_mem_MB": NaN,
+ "activation_mem_MB": NaN,
+ "params_M": 0.95878,
+ "gflops_per_sample": 0.212348928,
+ "amp": false
+}

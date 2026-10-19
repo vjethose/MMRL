@@ -1,0 +1,9 @@
+Software versions used for the CPU verification runs in S5 (not the GPU experiments):
+python: 3.13.16
+torch: 2.14.1+cu130
+transformers: 5.20.1
+scikit-learn: 1.9.1
+numpy: 2.5.3
+scipy: 1.18.1
+pillow: 12.3.0
+platform: Linux-6.18.44-fc-v139-x86_64-with-glibc2.39

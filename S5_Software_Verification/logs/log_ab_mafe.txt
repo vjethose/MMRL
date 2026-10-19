@@ -1,0 +1,10 @@
+synth_classification__mmrl__wo_mafe__s0: 24.6M parameters on cpu
+epoch 1: loss 2.5555  val 16.67  (29s)
+{
+ "accuracy": 16.666666666666664,
+ "precision": 2.873563218390805,
+ "recall": 16.666666666666664,
+ "f1": 4.901960784313726,
+ "map": 51.83873539880267,
+ "auc": 0.7959999999999999
+}

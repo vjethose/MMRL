@@ -1,0 +1,21 @@
+synth_classification__early__s0: 6.4M parameters on cpu
+epoch 1: loss 1.9567  val 36.67  (6s)
+epoch 2: loss 1.0247  val 76.67  (6s)
+epoch 3: loss 0.3178  val 95.00  (6s)
+epoch 4: loss 0.2309  val 95.00  (6s)
+epoch 5: loss 0.0479  val 91.67  (6s)
+epoch 6: loss 0.0261  val 95.00  (6s)
+epoch 7: loss 0.0039  val 98.33  (6s)
+epoch 8: loss 0.0005  val 96.67  (6s)
+epoch 9: loss 0.0006  val 96.67  (6s)
+epoch 10: loss 0.0002  val 98.33  (6s)
+epoch 11: loss 0.0001  val 98.33  (6s)
+epoch 12: loss 0.0001  val 98.33  (6s)
+{
+ "accuracy": 95.0,
+ "precision": 95.70707070707071,
+ "recall": 95.0,
+ "f1": 95.05961874382928,
+ "map": 99.57070707070706,
+ "auc": 0.999
+}

@@ -1,0 +1,6 @@
+synth_vqa__late__s0: 5.0M parameters on cpu
+epoch 1: loss 1.8232  val 20.00  (4s)
+{
+ "accuracy": 16.666666666666664,
+ "em": 16.666666666666664
+}

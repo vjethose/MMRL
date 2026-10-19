@@ -1,0 +1,10 @@
+synth_classification__mmbert__s0: 5.7M parameters on cpu
+epoch 1: loss 1.8015  val 30.00  (6s)
+{
+ "accuracy": 26.666666666666668,
+ "precision": 26.278659611992943,
+ "recall": 26.666666666666668,
+ "f1": 22.459623233617044,
+ "map": 33.44463221307989,
+ "auc": 0.6306666666666667
+}

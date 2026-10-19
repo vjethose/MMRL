@@ -1,0 +1,24 @@
+{
+ "name": "scienceqa",
+ "task": "vqa",
+ "modalities": [
+  "text",
+  "image"
+ ],
+ "answers": [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E"
+ ],
+ "max_text_len": 256,
+ "entity_emb": "kg/entity_emb.npy",
+ "entity_names": "kg/entities.json",
+ "source": "ScienceQA (Lu et al., NeurIPS 2022), official splits, IMG subset",
+ "sizes": {
+  "train": 48,
+  "val": 16,
+  "test": 16
+ }
+}

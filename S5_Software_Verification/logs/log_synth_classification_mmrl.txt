@@ -1,0 +1,10 @@
+synth_classification__mmrl__s0: 24.8M parameters on cpu
+epoch 1: loss 2.4293  val 18.33  (29s)
+{
+ "accuracy": 18.333333333333332,
+ "precision": 19.54022988505747,
+ "recall": 18.333333333333336,
+ "f1": 7.932263814616756,
+ "map": 56.97258562313583,
+ "auc": 0.835
+}

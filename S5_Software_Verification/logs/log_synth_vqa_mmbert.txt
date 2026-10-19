@@ -1,0 +1,6 @@
+synth_vqa__mmbert__s0: 5.0M parameters on cpu
+epoch 1: loss 1.8416  val 20.00  (5s)
+{
+ "accuracy": 28.333333333333332,
+ "em": 28.333333333333332
+}
