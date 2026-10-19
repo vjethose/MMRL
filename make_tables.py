@@ -254,7 +254,7 @@ def main():
                     L = min(len(r["history"]["train_loss"]) for r in rs)
                     y = np.mean([r["history"]["train_loss"][:L] for r in rs], 0)
                     ax.plot(np.arange(1, L + 1), y, label=NAMES[m], color=col[m], lw=2 if m == "mmrl" else 1.2)
-            ax.set_xlabel("Epoch"); ax.set_ylabel("Training loss"); ax.legend(fontsize=7, frameon=False)
+            ax.set_xticks(range(1, L + 1)); ax.set_xlabel("Epoch"); ax.set_ylabel("Training loss"); ax.legend(fontsize=7, frameon=False)
             fig.tight_layout(); fig.savefig(os.path.join(a.out, "fig3_loss.png"), dpi=300); plt.close(fig)
         # Fig 4: ROC
         if roc_ds and roc_ds in runs:
